@@ -1,0 +1,33 @@
+databaseChangeLog:
+  - preConditions:
+      - runningAs:
+          username:
+  - changeSet:
+      id: developers-table-1
+      author: root
+      changes:
+        - createTable:
+            tableName: developers
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: specialty_id
+                  type: int
+                  constraints:
+                    nullable: false
